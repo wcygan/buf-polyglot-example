@@ -1,6 +1,7 @@
 package io.wcygan.buf;
 
 public class App {
+    // TODO @wcygan: send a gRPC message to the server
     public String getGreeting() {
         return "Hello World!";
     }
