@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	pb "github.com/wcygan/buf-polyglot-example/schemas/generated/go/hello/v1"
+	pb "github.com/wcygan/buf-polyglot-example/generated/go/hello/v1"
 	"google.golang.org/grpc"
 	"log"
 	"net"
