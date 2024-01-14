@@ -38,7 +38,7 @@ grpcurl -plaintext -proto schemas/proto/hello/v1/hello.proto -d '{"name": "YourN
 
 ## How did I get the [buf.yaml](proto/buf.yaml) file?
 
-I ran the following command:
+I ran the following command in the [proto](proto) directory:
 
 ```bash
 $ buf mod init
