@@ -6,7 +6,7 @@ managed:
   java_package_prefix:
     default: io.wcygan.buf
 plugins:
-  #    Go
+  # Go
   - plugin: buf.build/grpc/go:v1.3.0
     out: generated/go
     opt:
@@ -14,8 +14,21 @@ plugins:
   - plugin: buf.build/protocolbuffers/go
     out: generated/go
     opt: paths=source_relative
-    #    Java
+  # Java
   - plugin: buf.build/grpc/java:v1.61.0
     out: generated/java
   - plugin: buf.build/protocolbuffers/java
     out: generated/java
+  # Rust
+  - plugin: buf.build/community/neoeinstein-prost:v0.2.3
+    out: generated/rust/src
+    opt:
+      - bytes=.
+      - compile_well_known_types
+      - extern_path=.google.protobuf=::pbjson_types
+      - file_descriptor_set
+  - plugin: buf.build/community/neoeinstein-tonic:v0.3.0
+    out: generated/rust/src
+    opt:
+      - compile_well_known_types
+      - extern_path=.google.protobuf=::pbjson_types
