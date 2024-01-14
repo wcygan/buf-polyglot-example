@@ -32,6 +32,15 @@ protobuf {
     }
 }
 
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+            srcDir '../../generated/java' // path to your generated files
+        }
+    }
+}
+
 testing {
     suites {
         // Configure the built-in test suite
