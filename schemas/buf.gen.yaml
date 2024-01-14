@@ -2,7 +2,9 @@ version: v1
 managed:
   enabled: true
   go_package_prefix:
-    default: github.com/wcygan/buf-example/generated
+    default: github.com/wcygan/buf-example
+  java_package_prefix:
+    default: io.wcygan.buf
 plugins:
   #    Go
   - plugin: buf.build/grpc/go:v1.3.0
