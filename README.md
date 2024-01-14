@@ -48,3 +48,12 @@ $ buf mod init
 
 I created it, then I added package names as well as plugins for the languages which I wanted to generate protobuf and
 grpc stubs for.
+
+## How did I get IntelliJ to index the Java Subproject?
+
+I open the *root directory* of this project in IntelliJ and use the Go plugin. However, IntelliJ doesn't necessarily index the subprojects properly.
+
+
+| Before                                        | During                                 | After                                        |
+|-----------------------------------------------|----------------------------------------|----------------------------------------------|
+| <img src="resources/before-mark-sources.png"> | <img src="resources/mark-sources.png"> | <img src="resources/after-mark-sources.png"> |
