@@ -32,3 +32,8 @@ plugins:
     opt:
       - compile_well_known_types
       - extern_path=.google.protobuf=::pbjson_types
+  # Need to 'cargo install protoc-gen-prost-crate' to install this plugin
+  - plugin: prost-crate # Makes the gen folder a crate
+    out: generated/rust
+    opt:
+      - gen_crate=generated/rust/Cargo.toml
