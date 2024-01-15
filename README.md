@@ -88,3 +88,18 @@ in [buf.gen.yaml](buf.gen.yaml) and [build.gradle](java-client/app/build.gradle)
 
 To integrate the Go code into the [go-server](go-server) project, I create a [go module](go.mod) in the root directory of the project, which
 allows me to import the generated code as a dependency in [go-server/main.go](go-server/main.go).
+
+#### Rust Integration
+
+This was a PITA to figure out, but luckily https://github.com/neoeinstein/protoc-gen-prost exists and comes with the option to generate crates.
+
+Unfortunately, using the `gen_crate` option in [buf.gen.yaml](buf.gen.yaml) forces you to use the `prost-crate` plugin locally, so you need to install it:
+
+```bash
+cargo install protoc-gen-prost-crate
+```
+
+It was also unclear how to use this, but I found a [tutorial](https://dev.to/martinp/roll-your-own-auth-with-rust-and-protobuf-3f78) which used this, and then I understood that you need 
+to have a [Cargo.toml](generated/rust/Cargo.toml) file in the directory which you want to generate the crate in.
+
+After all of this ceremony, `buf generate proto` worked as expected and I was able to plug the generated code into [rust-client](rust-client)'s [Cargo.toml](rust-client/Cargo.toml) with local pathing.
