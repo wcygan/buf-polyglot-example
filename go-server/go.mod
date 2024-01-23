@@ -1,6 +1,8 @@
 module github.com/wcygan/buf-polyglot-example/go-server
 
-go 1.21
+go 1.21.6
+
+require github.com/wcygan/buf-polyglot-example/generated/go v0.0.0
 
 require (
 	github.com/golang/protobuf v1.5.3 // indirect
@@ -10,7 +12,6 @@ require (
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20231002182017-d307bd883b97 // indirect
 	google.golang.org/grpc v1.60.1 // indirect
 	google.golang.org/protobuf v1.31.0 // indirect
-	github.com/wcygan/buf-polyglot-example/generated v0.0.0
 )
 
-replace github.com/wcygan/buf-polyglot-example/generated => ../generated
+replace github.com/wcygan/buf-polyglot-example/generated/go => ../generated/go
